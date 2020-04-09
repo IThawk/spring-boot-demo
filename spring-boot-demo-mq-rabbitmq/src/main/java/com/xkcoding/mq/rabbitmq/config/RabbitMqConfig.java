@@ -3,6 +3,7 @@ package com.xkcoding.mq.rabbitmq.config;
 import com.google.common.collect.Maps;
 import com.xkcoding.mq.rabbitmq.constants.RabbitConsts;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.juli.logging.Log;
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

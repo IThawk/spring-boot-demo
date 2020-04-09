@@ -4,10 +4,10 @@ server:
     context-path: /demo
 spring:
   rabbitmq:
-    host: localhost
+    host: 192.168.101.150
     port: 5672
-    username: guest
-    password: guest
+    username: demo
+    password: demo
     virtual-host: /
     # 手动提交消息
     listener:
