@@ -2,30 +2,54 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xkcoding.orm.mybatis.mapper.UserMapper">
 
-    <insert id="saveUser">
-        INSERT INTO `orm_user` (`name`,
-                                `password`,
-                                `salt`,
-                                `email`,
-                                `phone_number`,
-                                `status`,
-                                `create_time`,
-                                `last_login_time`,
-                                `last_update_time`)
-        VALUES (#{user.name},
-                #{user.password},
-                #{user.salt},
-                #{user.email},
-                #{user.phoneNumber},
-                #{user.status},
-                #{user.createTime},
-                #{user.lastLoginTime},
-                #{user.lastUpdateTime})
-    </insert>
+  <insert id="saveUser">
+    <selectKey keyProperty="id" resultType="int" order="BEFORE">
+      SELECT nextval('orm_user_id_seq'::regclass) as id
+    </selectKey>
+    INSERT INTO orm_user (name,
+    password,
+    salt,
+    email,
+    phone_number
+    <if test="user.status !=null">
+      ,status
+    </if>
+    <if test="user.status !=null">
+      ,create_time
+    </if>
+    <if test="user.status !=null">
+      ,last_login_time
+    </if>
+    <if test="user.status !=null">
+      ,last_update_time
+    </if>
+    )
+    VALUES (#{user.name},
+    #{user.password},
+    #{user.salt},
+    #{user.email},
+    #{user.phoneNumber}
+    <if test="user.status !=null">
+      ,#{user.status}
+    </if>
 
-    <delete id="deleteById">
+    <if test="user.status !=null">
+      ,#{user.createTime}
+    </if>
+
+    <if test="user.status !=null">
+      ,#{user.lastLoginTime}
+    </if>
+
+    <if test="user.status !=null">
+      ,#{user.lastUpdateTime}
+    </if>
+    )
+  </insert>
+
+  <delete id="deleteById">
         DELETE
-        FROM `orm_user`
-        WHERE `id` = #{id}
+        FROM orm_user
+        WHERE id = #{id}
     </delete>
 </mapper>

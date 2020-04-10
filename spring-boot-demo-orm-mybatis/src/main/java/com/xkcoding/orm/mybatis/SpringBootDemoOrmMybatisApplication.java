@@ -1,6 +1,5 @@
 package com.xkcoding.orm.mybatis;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -17,7 +16,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version: V1.0
  * @modified: yangkai.shen
  */
-@MapperScan(basePackages = {"com.xkcoding.orm.mybatis.mapper"})
 @SpringBootApplication
 public class SpringBootDemoOrmMybatisApplication {
 
