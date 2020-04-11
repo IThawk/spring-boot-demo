@@ -1,11 +1,10 @@
-package com.xkcoding.orm.mybatis.mapper;
+package com.ithawk.learn.springboot.mapper;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.crypto.SecureUtil;
 import com.ithawk.learn.springboot.entity.User;
-import com.ithawk.learn.springboot.mapper.UserMapper;
 import com.xkcoding.orm.mybatis.SpringBootDemoOrmMybatisApplicationTests;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;

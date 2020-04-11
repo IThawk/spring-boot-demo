@@ -6,7 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
@@ -26,8 +28,10 @@ import java.util.Date;
 @AllArgsConstructor
 @Builder
 public class User implements Serializable {
-    private static final long serialVersionUID = -1840831686851699943L;
 
+    public final static List<String> USER_COLUMN = Arrays.asList("用户名",
+        "用户年龄",
+        "用户角色");
     /**
      * 主键
      */
