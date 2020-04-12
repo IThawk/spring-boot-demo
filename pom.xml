@@ -70,6 +70,7 @@
     <module>spring-boot-demo-https</module>
     <module>spring-boot-demo-flyway</module>
     <module>spring-boot-demo-all</module>
+    <module>spring-boot-demo-elastic-job</module>
   </modules>
   <packaging>pom</packaging>
 
