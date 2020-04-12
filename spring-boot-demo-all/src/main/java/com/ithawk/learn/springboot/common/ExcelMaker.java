@@ -42,4 +42,7 @@ public interface ExcelMaker<T> {
      * @return void
      */
     void addData(List<T> t);
+
+
+    String[][] makeContent(List<T> t);
 }

@@ -57,4 +57,20 @@ public class OrmUserServiceImpl  implements OrmUserService {
         System.out.println("orm_user.........");
         System.out.println(o);
     }
+
+    @Override
+    public String[][] makeContent(List<OrmUser> t) {
+
+        int j = OrmUser.ORM_USER_COLUMN.size();
+        String[][] strings = new String[t.size()][];
+        for (int i = 0; i < t.size(); i++) {
+            strings[i] = new String[OrmUser.ORM_USER_COLUMN.size()];
+            OrmUser obj = t.get(i);
+            strings[i][0] = obj.getId().toString();
+            strings[i][1] = obj.getEmail();
+            strings[i][2] = obj.getPassword();
+        }
+
+        return strings;
+    }
 }

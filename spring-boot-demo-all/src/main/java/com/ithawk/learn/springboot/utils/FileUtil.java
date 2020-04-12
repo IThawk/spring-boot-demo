@@ -1,5 +1,6 @@
 package com.ithawk.learn.springboot.utils;
 
+
 /**
  * @author IThawk
  * @version V1.0
@@ -7,4 +8,5 @@ package com.ithawk.learn.springboot.utils;
  * @date 2020-04-11 18:17
  */
 public class FileUtil {
+
 }

@@ -48,4 +48,19 @@ public class UserServiceImpl  implements UserService {
         System.out.println("user.........");
         System.out.println(o);
     }
+
+    @Override
+    public String[][] makeContent(List<User> t) {
+        String[][] strings = new String[t.size()][];
+        for (int i = 0; i < t.size(); i++) {
+            strings[i] = new String[User.USER_COLUMN.size()];
+            User obj = t.get(i);
+            strings[i][0] = obj.getId().toString();
+            strings[i][1] = obj.getEmail();
+            strings[i][2] = obj.getPassword();
+//            strings[i][3] = obj.getPhoneNumber();
+//            strings[i][4] = obj.getCreateTime().toString();
+        }
+        return strings;
+    }
 }
