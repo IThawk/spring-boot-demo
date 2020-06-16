@@ -36,7 +36,7 @@ public class Oauth2Controller {
      * 退出登录
      *
      * @param redirectUrl 退出完成后的回调地址
-     * @param principal 用户信息
+     * @param principal   用户信息
      * @return 结果
      */
     @GetMapping("/logout")

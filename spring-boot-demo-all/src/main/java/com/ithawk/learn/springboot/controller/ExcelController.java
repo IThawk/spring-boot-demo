@@ -31,12 +31,13 @@ public class ExcelController {
 
     @Autowired
     private ExcelService excelService;
-    @GetMapping(value = "getExcel")
-    public void getExcelByName(HttpServletResponse response,@RequestParam(value = "name") String name) {
 
-        HSSFWorkbook wb  = excelService.makeExcelByName(name+".xls");
+    @GetMapping(value = "getExcel")
+    public void getExcelByName(HttpServletResponse response, @RequestParam(value = "name") String name) {
+
+        HSSFWorkbook wb = excelService.makeExcelByName(name + ".xls");
         try {
-            this.setResponseHeader(response, name+".xls");
+            this.setResponseHeader(response, name + ".xls");
             OutputStream os = response.getOutputStream();
             wb.write(os);
             os.flush();
@@ -57,10 +58,10 @@ public class ExcelController {
         //获取数据
         List<PageData> list = new ArrayList<>();
         PageData pageData1 = PageData.builder().id(1L).username("老吴")
-                                        .password("1222")
-                                        .createTime(new Date())
-                                        .phone("1234567")
-                                        .build();
+            .password("1222")
+            .createTime(new Date())
+            .phone("1234567")
+            .build();
         list.add(pageData1);
         //excel标题
         String[] title = {"用户ID", "用户名称", "用户密码", "用户手机", "创建时间"};
@@ -91,7 +92,7 @@ public class ExcelController {
         try {
             this.setResponseHeader(response, fileName);
             OutputStream os = response.getOutputStream();
-            file = new File("f:\\"+fileName);
+            file = new File("f:\\" + fileName);
             if (!file.exists()) {
                 file.createNewFile();
             }

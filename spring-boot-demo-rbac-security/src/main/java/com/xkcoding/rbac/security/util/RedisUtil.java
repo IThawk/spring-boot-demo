@@ -44,8 +44,8 @@ public class RedisUtil {
      */
     public PageResult<String> findKeysForPage(String patternKey, int currentPage, int pageSize) {
         ScanOptions options = ScanOptions.scanOptions()
-                .match(patternKey)
-                .build();
+            .match(patternKey)
+            .build();
         RedisConnectionFactory factory = stringRedisTemplate.getConnectionFactory();
         RedisConnection rc = factory.getConnection();
         Cursor<byte[]> cursor = rc.scan(options);

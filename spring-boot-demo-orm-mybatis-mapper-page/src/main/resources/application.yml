@@ -8,9 +8,9 @@ spring:
     initialization-mode: always
     continue-on-error: true
     schema:
-    - "classpath:db/schema.sql"
+      - "classpath:db/schema.sql"
     data:
-    - "classpath:db/data.sql"
+      - "classpath:db/data.sql"
     hikari:
       minimum-idle: 5
       connection-test-query: SELECT 1 FROM DUAL
@@ -32,7 +32,7 @@ mybatis:
   type-aliases-package: com.xkcoding.orm.mybatis.MapperAndPage.entity
 mapper:
   mappers:
-  - tk.mybatis.mapper.common.Mapper
+    - tk.mybatis.mapper.common.Mapper
   not-empty: true
   style: camelhump
   wrap-keyword: "`{0}`"

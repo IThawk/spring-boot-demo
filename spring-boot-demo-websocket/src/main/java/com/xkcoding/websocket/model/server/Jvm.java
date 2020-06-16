@@ -92,7 +92,7 @@ public class Jvm {
      */
     public String getName() {
         return ManagementFactory.getRuntimeMXBean()
-                .getVmName();
+            .getVmName();
     }
 
     public String getVersion() {
@@ -117,7 +117,7 @@ public class Jvm {
 
     public String getStartTime() {
         return DateUtil.formatDateTime(new Date(ManagementFactory.getRuntimeMXBean()
-                .getStartTime()));
+            .getStartTime()));
     }
 
 
@@ -127,7 +127,7 @@ public class Jvm {
 
     public String getRunTime() {
         long startTime = ManagementFactory.getRuntimeMXBean()
-                .getStartTime();
+            .getStartTime();
         return DateUtil.formatBetween(DateUtil.current(false) - startTime);
     }
 }

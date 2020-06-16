@@ -46,14 +46,14 @@ public interface OrmUserMapper {
     @Update({
         "update orm_user",
         "set name = #{name,jdbcType=VARCHAR},",
-          "password = #{password,jdbcType=VARCHAR},",
-          "salt = #{salt,jdbcType=VARCHAR},",
-          "email = #{email,jdbcType=VARCHAR},",
-          "phone_number = #{phoneNumber,jdbcType=VARCHAR},",
-          "status = #{status,jdbcType=SMALLINT},",
-          "create_time = #{createTime,jdbcType=DATE},",
-          "last_login_time = #{lastLoginTime,jdbcType=DATE},",
-          "last_update_time = #{lastUpdateTime,jdbcType=DATE}",
+        "password = #{password,jdbcType=VARCHAR},",
+        "salt = #{salt,jdbcType=VARCHAR},",
+        "email = #{email,jdbcType=VARCHAR},",
+        "phone_number = #{phoneNumber,jdbcType=VARCHAR},",
+        "status = #{status,jdbcType=SMALLINT},",
+        "create_time = #{createTime,jdbcType=DATE},",
+        "last_login_time = #{lastLoginTime,jdbcType=DATE},",
+        "last_update_time = #{lastUpdateTime,jdbcType=DATE}",
         "where id = #{id,jdbcType=INTEGER}"
     })
     int updateByPrimaryKey(OrmUser record);

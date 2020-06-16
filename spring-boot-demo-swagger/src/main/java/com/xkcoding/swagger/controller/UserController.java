@@ -38,9 +38,9 @@ public class UserController {
     public ApiResponse<User> getByUserName(String username) {
         log.info("多个参数用  @ApiImplicitParams");
         return ApiResponse.<User>builder().code(200)
-                .message("操作成功")
-                .data(new User(1, username, "JAVA"))
-                .build();
+            .message("操作成功")
+            .data(new User(1, username, "JAVA"))
+            .build();
     }
 
     @GetMapping("/{id}")
@@ -49,9 +49,9 @@ public class UserController {
     public ApiResponse<User> get(@PathVariable Integer id) {
         log.info("单个参数用  @ApiImplicitParam");
         return ApiResponse.<User>builder().code(200)
-                .message("操作成功")
-                .data(new User(id, "u1", "p1"))
-                .build();
+            .message("操作成功")
+            .data(new User(id, "u1", "p1"))
+            .build();
     }
 
     @DeleteMapping("/{id}")

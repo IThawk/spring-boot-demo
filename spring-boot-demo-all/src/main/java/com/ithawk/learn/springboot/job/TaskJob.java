@@ -16,7 +16,6 @@ import java.util.Date;
 import java.util.List;
 
 /**
- *
  * @package: com.ithawk.learn.springboot.job
  * @description: 定时任务
  * @author: IThawk
@@ -48,12 +47,11 @@ public class TaskJob {
     }
 
     /**
-     *
+     * @return
      * @description: 从启动时间开始，间隔 2s 执行,发送邮件
      * @author IThawk
      * @date 2020/4/11 22:16
      * @param: null
-     * @return
      */
     @Scheduled(fixedRate = 2000)
     public void shareEmail() {

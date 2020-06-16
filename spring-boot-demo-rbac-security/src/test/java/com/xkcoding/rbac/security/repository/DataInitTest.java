@@ -131,7 +131,7 @@ public class DataInitTest extends SpringBootDemoRbacSecurityApplicationTests {
         user.setNickname(isAdmin ? "管理员" : "普通用户");
         user.setPassword(encoder.encode("123456"));
         user.setBirthday(DateTime.of("1994-11-22", "yyyy-MM-dd")
-                .getTime());
+            .getTime());
         user.setEmail((isAdmin ? "admin" : "user") + "@xkcoding.com");
         user.setPhone(isAdmin ? "17300000000" : "17300001111");
         user.setSex(1);

@@ -6,7 +6,7 @@
   <!-- 导入配置文件 -->
   <properties resource="db/db.properties"/>
 
-<!--  <classPathEntry location="E:\mavenCenter\org\postgresql\postgresql\42.1.1\postgresql-42.1.1.jar"/>-->
+  <!--  <classPathEntry location="E:\mavenCenter\org\postgresql\postgresql\42.1.1\postgresql-42.1.1.jar"/>-->
   <!-- defaultModelType="flat" 设置复合主键时不单独为主键创建实体
    id : 随便填，保证多个 context id 不重复就行
   defaultModelType ： 可以不填，默认值 conditional，flat表示一张表对应一个po

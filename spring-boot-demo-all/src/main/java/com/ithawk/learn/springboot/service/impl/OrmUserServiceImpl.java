@@ -16,7 +16,7 @@ import java.util.List;
  * @date 2020-04-11 20:53
  */
 @Service
-public class OrmUserServiceImpl  implements OrmUserService {
+public class OrmUserServiceImpl implements OrmUserService {
 
 //    private List<String> lists;
 //    {

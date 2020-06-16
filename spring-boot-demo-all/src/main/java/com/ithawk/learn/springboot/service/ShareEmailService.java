@@ -5,7 +5,6 @@ import com.ithawk.learn.springboot.entity.ShareEmailDetail;
 import java.util.List;
 
 /**
- *
  * @author IThawk
  * @version V1.0
  * @description:

@@ -28,7 +28,8 @@
                 <v-window v-model="window" style="min-height:180px">
                   <v-window-item :key="0">
                     <v-text-field label="用户名/手机号/邮箱" name="username" type="text" clearable :rules="usernameRules"
-                                  outlined v-model='user.username' @keyup.enter="next" ref="username" autofocus :counter="55">
+                                  outlined v-model='user.username' @keyup.enter="next" ref="username" autofocus
+                                  :counter="55">
                     </v-text-field>
                     <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
                   </v-window-item>
@@ -45,8 +46,8 @@
                 <v-btn color="info" type="button" @click="next" v-show="window === 0">下一步</v-btn>
                 <v-btn color="info" type="submit" @click="next" v-show="window === 1">登录</v-btn>
               </v-card-actions>
-          </v-form>
-        </v-card>
+            </v-form>
+          </v-card>
         </v-col>
       </v-row>
     </v-content>
@@ -54,7 +55,7 @@
 </div>
 
 <div th:include="common/common::_footer"></div>
-<script >
+<script>
   new Vue({
     el: '#app',
     vuetify: new Vuetify(),
@@ -68,11 +69,11 @@
           username: null,
           password: null
         },
-        usernameRules:[
+        usernameRules: [
           v => !!v || '请输入用户名/手机号/邮箱',
           v => !!v && v.length <= 55 || '长度不合法'
         ],
-        passwordRules:[ v => !!v || '请输入密码' ]
+        passwordRules: [v => !!v || '请输入密码']
       }
     },
     watch: {
@@ -88,7 +89,7 @@
         }
       }
     },
-    created () {
+    created() {
       this.window = 0
     },
     methods: {
@@ -99,7 +100,7 @@
           this.window -= 1
         }
       },
-      next () {
+      next() {
         if (this.window === 0) this.$refs.username.validate(true) && (this.window += 1)
         else this.$refs.password.validate(true) && document.getElementById("login").submit()
       }

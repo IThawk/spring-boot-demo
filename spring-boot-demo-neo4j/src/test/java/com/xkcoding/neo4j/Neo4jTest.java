@@ -77,8 +77,8 @@ public class Neo4jTest extends SpringBootDemoNeo4jApplicationTests {
     public void testFindClassmates() {
         Map<String, List<Student>> classmates = neoService.findClassmatesGroupByLesson();
         classmates.forEach((k, v) -> log.info("因为一起上了【{}】这门课，成为同学关系的有：{}", k, JSONUtil.toJsonStr(v.stream()
-                .map(Student::getName)
-                .collect(Collectors.toList()))));
+            .map(Student::getName)
+            .collect(Collectors.toList()))));
     }
 
     /**
@@ -88,7 +88,7 @@ public class Neo4jTest extends SpringBootDemoNeo4jApplicationTests {
     public void testFindTeacherStudent() {
         Map<String, Set<Student>> teacherStudent = neoService.findTeacherStudent();
         teacherStudent.forEach((k, v) -> log.info("【{}】教的学生有 {}", k, JSONUtil.toJsonStr(v.stream()
-                .map(Student::getName)
-                .collect(Collectors.toList()))));
+            .map(Student::getName)
+            .collect(Collectors.toList()))));
     }
 }

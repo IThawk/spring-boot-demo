@@ -116,7 +116,7 @@ public enum Status implements IStatus {
         Status[] statuses = Status.values();
         for (Status status : statuses) {
             if (status.getCode()
-                    .equals(code)) {
+                .equals(code)) {
                 return status;
             }
         }

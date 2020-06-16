@@ -16,7 +16,7 @@ import java.util.List;
  * @date 2020-04-11 14:48
  */
 @Service
-public class UserServiceImpl  implements UserService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;

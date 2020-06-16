@@ -21,7 +21,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SnowflakeConfig {
     @Bean
-    public Snowflake snowflake(){
-        return IdUtil.createSnowflake(1,1);
+    public Snowflake snowflake() {
+        return IdUtil.createSnowflake(1, 1);
     }
 }

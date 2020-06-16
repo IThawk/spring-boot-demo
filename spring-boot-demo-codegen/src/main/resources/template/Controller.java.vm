@@ -32,80 +32,80 @@ import io.swagger.annotations.ApiImplicitParams;
 @Api(description = "${className}Controller", tags = {"${comments}"})
 public class ${className}Controller {
 
-    private final ${className}Service ${classname}Service;
+  private final ${className}Service ${classname}Service;
 
-    /**
-     * 分页查询${comments}
-     * @param page 分页对象
-     * @param ${classname} ${comments}
-     * @return R
-     */
-    @GetMapping("")
-    @ApiOperation(value = "分页查询${comments}", notes = "分页查询${comments}")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "page", value = "分页参数", required = true),
-            @ApiImplicitParam(name = "${classname}", value = "查询条件", required = true)
-    })
-    public R list${className}(Page page, ${className} ${classname}) {
-      return new R<>(${classname}Service.page(page,Wrappers.query(${classname})));
-    }
+  /**
+   * 分页查询${comments}
+   * @param page 分页对象
+   * @param ${classname} ${comments}
+   * @return R
+   */
+  @GetMapping("")
+  @ApiOperation(value = "分页查询${comments}", notes = "分页查询${comments}")
+  @ApiImplicitParams({
+    @ApiImplicitParam(name = "page", value = "分页参数", required = true),
+    @ApiImplicitParam(name = "${classname}", value = "查询条件", required = true)
+  })
+  public R list${className}(Page page, ${className} ${classname}) {
+    return new R<>(${classname}Service.page(page, Wrappers.query(${classname})));
+  }
 
 
-    /**
-     * 通过id查询${comments}
-     * @param ${pk.lowerAttrName} id
-     * @return R
-     */
-    @GetMapping("/{${pk.lowerAttrName}}")
-    @ApiOperation(value = "通过id查询${comments}", notes = "通过id查询${comments}")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "${pk.lowerAttrName}", value = "主键id", required = true)
-    })
-    public R get${className}(@PathVariable("${pk.lowerAttrName}") ${pk.attrType} ${pk.lowerAttrName}){
-      return new R<>(${classname}Service.getById(${pk.lowerAttrName}));
-    }
+  /**
+   * 通过id查询${comments}
+   * @param ${pk.lowerAttrName} id
+   * @return R
+   */
+  @GetMapping("/{${pk.lowerAttrName}}")
+  @ApiOperation(value = "通过id查询${comments}", notes = "通过id查询${comments}")
+  @ApiImplicitParams({
+    @ApiImplicitParam(name = "${pk.lowerAttrName}", value = "主键id", required = true)
+  })
+  public R get${className}(@PathVariable("${pk.lowerAttrName}") ${pk.attrType} ${pk.lowerAttrName}) {
+    return new R<>(${classname}Service.getById(${pk.lowerAttrName}));
+  }
 
-    /**
-     * 新增${comments}
-     * @param ${classname} ${comments}
-     * @return R
-     */
-    @ApiLog("新增${comments}")
-    @PostMapping
-    @ApiOperation(value = "新增${comments}", notes = "新增${comments}")
-    public R save${className}(@RequestBody ${className} ${classname}){
-      return new R<>(${classname}Service.save(${classname}));
-    }
+  /**
+   * 新增${comments}
+   * @param ${classname} ${comments}
+   * @return R
+   */
+  @ApiLog("新增${comments}")
+  @PostMapping
+  @ApiOperation(value = "新增${comments}", notes = "新增${comments}")
+  public R save${className}(@RequestBody ${className} ${classname}) {
+    return new R<>(${classname}Service.save(${classname}));
+  }
 
-    /**
-     * 修改${comments}
-     * @param ${pk.lowerAttrName} id
-     * @param ${classname} ${comments}
-     * @return R
-     */
-    @ApiLog("修改${comments}")
-    @PutMapping("/{${pk.lowerAttrName}}")
-    @ApiOperation(value = "修改${comments}", notes = "修改${comments}")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "${pk.lowerAttrName}", value = "主键id", required = true)
-    })
-    public R update${className}(@PathVariable ${pk.attrType} ${pk.lowerAttrName}, @RequestBody ${className} ${classname}){
-      return new R<>(${classname}Service.updateById(${classname}));
-    }
+  /**
+   * 修改${comments}
+   * @param ${pk.lowerAttrName} id
+   * @param ${classname} ${comments}
+   * @return R
+   */
+  @ApiLog("修改${comments}")
+  @PutMapping("/{${pk.lowerAttrName}}")
+  @ApiOperation(value = "修改${comments}", notes = "修改${comments}")
+  @ApiImplicitParams({
+    @ApiImplicitParam(name = "${pk.lowerAttrName}", value = "主键id", required = true)
+  })
+  public R update${className}(@PathVariable ${pk.attrType} ${pk.lowerAttrName}, @RequestBody ${className} ${classname}) {
+    return new R<>(${classname}Service.updateById(${classname}));
+  }
 
-    /**
-     * 通过id删除${comments}
-     * @param ${pk.lowerAttrName} id
-     * @return R
-     */
-    @ApiLog("删除${comments}")
-    @DeleteMapping("/{${pk.lowerAttrName}}")
-    @ApiOperation(value = "删除${comments}", notes = "删除${comments}")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "${pk.lowerAttrName}", value = "主键id", required = true)
-    })
-    public R delete${className}(@PathVariable ${pk.attrType} ${pk.lowerAttrName}){
-      return new R<>(${classname}Service.removeById(${pk.lowerAttrName}));
-    }
+  /**
+   * 通过id删除${comments}
+   * @param ${pk.lowerAttrName} id
+   * @return R
+   */
+  @ApiLog("删除${comments}")
+  @DeleteMapping("/{${pk.lowerAttrName}}")
+  @ApiOperation(value = "删除${comments}", notes = "删除${comments}")
+  @ApiImplicitParams({
+    @ApiImplicitParam(name = "${pk.lowerAttrName}", value = "主键id", required = true)
+  })
+  public R delete${className}(@PathVariable ${pk.attrType} ${pk.lowerAttrName}) {
+    return new R<>(${classname}Service.removeById(${pk.lowerAttrName}));
+  }
 
 }

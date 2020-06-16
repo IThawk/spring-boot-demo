@@ -21,10 +21,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD})
 public @interface Column {
-	/**
-	 * 列名
-	 *
-	 * @return 列名
-	 */
-	String name();
+    /**
+     * 列名
+     *
+     * @return 列名
+     */
+    String name();
 }

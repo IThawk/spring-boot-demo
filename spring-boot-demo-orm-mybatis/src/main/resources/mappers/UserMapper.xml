@@ -48,8 +48,8 @@
   </insert>
 
   <delete id="deleteById">
-        DELETE
-        FROM orm_user
-        WHERE id = #{id}
-    </delete>
+    DELETE
+    FROM orm_user
+    WHERE id = #{id}
+  </delete>
 </mapper>

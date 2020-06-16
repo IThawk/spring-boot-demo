@@ -64,19 +64,19 @@ public class RbacAuthorityService {
 
             List<Role> roles = roleDao.selectByUserId(userId);
             List<Long> roleIds = roles.stream()
-                    .map(Role::getId)
-                    .collect(Collectors.toList());
+                .map(Role::getId)
+                .collect(Collectors.toList());
             List<Permission> permissions = permissionDao.selectByRoleIdList(roleIds);
 
             //获取资源，前后端分离，所以过滤页面权限，只保留按钮权限
             List<Permission> btnPerms = permissions.stream()
-                    // 过滤页面权限
-                    .filter(permission -> Objects.equals(permission.getType(), Consts.BUTTON))
-                    // 过滤 URL 为空
-                    .filter(permission -> StrUtil.isNotBlank(permission.getUrl()))
-                    // 过滤 METHOD 为空
-                    .filter(permission -> StrUtil.isNotBlank(permission.getMethod()))
-                    .collect(Collectors.toList());
+                // 过滤页面权限
+                .filter(permission -> Objects.equals(permission.getType(), Consts.BUTTON))
+                // 过滤 URL 为空
+                .filter(permission -> StrUtil.isNotBlank(permission.getUrl()))
+                // 过滤 METHOD 为空
+                .filter(permission -> StrUtil.isNotBlank(permission.getMethod()))
+                .collect(Collectors.toList());
 
             for (Permission btnPerm : btnPerms) {
                 AntPathRequestMatcher antPathMatcher = new AntPathRequestMatcher(btnPerm.getUrl(), btnPerm.getMethod());
@@ -110,7 +110,7 @@ public class RbacAuthorityService {
             AntPathRequestMatcher antPathMatcher = new AntPathRequestMatcher(uri);
             if (antPathMatcher.matches(request)) {
                 if (!urlMapping.get(uri)
-                        .contains(currentMethod)) {
+                    .contains(currentMethod)) {
                     throw new SecurityException(Status.HTTP_BAD_METHOD);
                 } else {
                     return;
@@ -135,14 +135,14 @@ public class RbacAuthorityService {
         handlerMethods.forEach((k, v) -> {
             // 获取当前 key 下的获取所有URL
             Set<String> url = k.getPatternsCondition()
-                    .getPatterns();
+                .getPatterns();
             RequestMethodsRequestCondition method = k.getMethodsCondition();
 
             // 为每个URL添加所有的请求方法
             url.forEach(s -> urlMapping.putAll(s, method.getMethods()
-                    .stream()
-                    .map(Enum::toString)
-                    .collect(Collectors.toList())));
+                .stream()
+                .map(Enum::toString)
+                .collect(Collectors.toList())));
         });
 
         return urlMapping;

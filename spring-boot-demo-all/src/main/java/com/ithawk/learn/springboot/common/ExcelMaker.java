@@ -5,7 +5,6 @@ import com.ithawk.learn.springboot.entity.ShareEmailDetail;
 import java.util.List;
 
 /**
- *
  * @author IThawk
  * @version V1.0
  * @description: 邮件生成接口
@@ -14,22 +13,20 @@ import java.util.List;
 public interface ExcelMaker<T> {
 
     /**
-     *
+     * @return java.util.List<T>
      * @description: 获取表格中需要的数据
      * @author IThawk
      * @date 2020/4/11 22:13
      * @param: email
-     * @return java.util.List<T>
      */
     List<T> getData(ShareEmailDetail email);
 
     /**
-     *
+     * @return java.util.List<java.lang.String>
      * @description: 获取表格的列
      * @author IThawk
      * @date 2020/4/11 22:14
      * @param:
-     * @return java.util.List<java.lang.String>
      */
     List<String> getColumn();
 

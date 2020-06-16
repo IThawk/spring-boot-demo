@@ -48,15 +48,15 @@ public interface ShareEmailDetailMapper {
     @Update({
         "update share_email_detail",
         "set name = #{name,jdbcType=VARCHAR},",
-          "creator = #{creator,jdbcType=VARCHAR},",
-          "create_time = #{createTime,jdbcType=DATE},",
-          "email_data = #{emailData,jdbcType=VARCHAR},",
-          "receivers = #{receivers,jdbcType=VARCHAR},",
-          "content = #{content,jdbcType=VARCHAR},",
-          "subject = #{subject,jdbcType=VARCHAR},",
-          "status = #{status,jdbcType=SMALLINT},",
-          "last_update_time = #{lastUpdateTime,jdbcType=DATE},",
-          "send_type = #{sendType,jdbcType=VARCHAR}",
+        "creator = #{creator,jdbcType=VARCHAR},",
+        "create_time = #{createTime,jdbcType=DATE},",
+        "email_data = #{emailData,jdbcType=VARCHAR},",
+        "receivers = #{receivers,jdbcType=VARCHAR},",
+        "content = #{content,jdbcType=VARCHAR},",
+        "subject = #{subject,jdbcType=VARCHAR},",
+        "status = #{status,jdbcType=SMALLINT},",
+        "last_update_time = #{lastUpdateTime,jdbcType=DATE},",
+        "send_type = #{sendType,jdbcType=VARCHAR}",
         "where id = #{id,jdbcType=INTEGER}"
     })
     int updateByPrimaryKey(ShareEmailDetail record);

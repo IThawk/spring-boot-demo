@@ -67,30 +67,30 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         // @formatter:off
         http.cors()
-                // 关闭 CSRF
-                .and().csrf().disable()
-                // 登录行为由自己实现，参考 AuthController#login
-                .formLogin().disable()
-                .httpBasic().disable()
+            // 关闭 CSRF
+            .and().csrf().disable()
+            // 登录行为由自己实现，参考 AuthController#login
+            .formLogin().disable()
+            .httpBasic().disable()
 
-                // 认证请求
-                .authorizeRequests()
-                // 所有请求都需要登录访问
-                .anyRequest()
-                .authenticated()
-                // RBAC 动态 url 认证
-                .anyRequest()
-                .access("@rbacAuthorityService.hasPermission(request,authentication)")
+            // 认证请求
+            .authorizeRequests()
+            // 所有请求都需要登录访问
+            .anyRequest()
+            .authenticated()
+            // RBAC 动态 url 认证
+            .anyRequest()
+            .access("@rbacAuthorityService.hasPermission(request,authentication)")
 
-                // 登出行为由自己实现，参考 AuthController#logout
-                .and().logout().disable()
-                // Session 管理
-                .sessionManagement()
-                // 因为使用了JWT，所以这里不管理Session
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            // 登出行为由自己实现，参考 AuthController#logout
+            .and().logout().disable()
+            // Session 管理
+            .sessionManagement()
+            // 因为使用了JWT，所以这里不管理Session
+            .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 
-                // 异常处理
-                .and().exceptionHandling().accessDeniedHandler(accessDeniedHandler);
+            // 异常处理
+            .and().exceptionHandling().accessDeniedHandler(accessDeniedHandler);
         // @formatter:on
 
         // 添加自定义 JWT 过滤器

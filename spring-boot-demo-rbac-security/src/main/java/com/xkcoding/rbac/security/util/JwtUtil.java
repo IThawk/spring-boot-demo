@@ -59,12 +59,12 @@ public class JwtUtil {
     public String createJWT(Boolean rememberMe, Long id, String subject, List<String> roles, Collection<? extends GrantedAuthority> authorities) {
         Date now = new Date();
         JwtBuilder builder = Jwts.builder()
-                .setId(id.toString())
-                .setSubject(subject)
-                .setIssuedAt(now)
-                .signWith(SignatureAlgorithm.HS256, jwtConfig.getKey())
-                .claim("roles", roles)
-                .claim("authorities", authorities);
+            .setId(id.toString())
+            .setSubject(subject)
+            .setIssuedAt(now)
+            .signWith(SignatureAlgorithm.HS256, jwtConfig.getKey())
+            .claim("roles", roles)
+            .claim("authorities", authorities);
 
         // 设置过期时间
         Long ttl = rememberMe ? jwtConfig.getRemember() : jwtConfig.getTtl();
@@ -75,7 +75,7 @@ public class JwtUtil {
         String jwt = builder.compact();
         // 将生成的JWT保存至Redis
         stringRedisTemplate.opsForValue()
-                .set(Consts.REDIS_JWT_KEY_PREFIX + subject, jwt, ttl, TimeUnit.MILLISECONDS);
+            .set(Consts.REDIS_JWT_KEY_PREFIX + subject, jwt, ttl, TimeUnit.MILLISECONDS);
         return jwt;
     }
 
@@ -100,9 +100,9 @@ public class JwtUtil {
     public Claims parseJWT(String jwt) {
         try {
             Claims claims = Jwts.parser()
-                    .setSigningKey(jwtConfig.getKey())
-                    .parseClaimsJws(jwt)
-                    .getBody();
+                .setSigningKey(jwtConfig.getKey())
+                .parseClaimsJws(jwt)
+                .getBody();
 
             String username = claims.getSubject();
             String redisKey = Consts.REDIS_JWT_KEY_PREFIX + username;
@@ -115,7 +115,7 @@ public class JwtUtil {
 
             // 校验redis中的JWT是否与当前的一致，不一致则代表用户已注销/用户在不同设备登录，均代表JWT已过期
             String redisToken = stringRedisTemplate.opsForValue()
-                    .get(redisKey);
+                .get(redisKey);
             if (!StrUtil.equals(jwt, redisToken)) {
                 throw new SecurityException(Status.TOKEN_OUT_OF_CTRL);
             }

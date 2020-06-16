@@ -24,22 +24,22 @@ public class SendMessageController {
     // private KafkaTemplate<String, String> kafkaTemplate;
     private KafkaTemplate<String, Message> kafkaTemplate;
 
-     @GetMapping("/send1/{message}")
-     public void send(@PathVariable String message) {
-         this.kafkaTemplate.send("test",  new Message("ithawk", message));
-         ListenableFuture<SendResult<String, Message>> future = this.kafkaTemplate.send("test",  new Message("ithawk", message));
-         future.addCallback(new ListenableFutureCallback<SendResult<String, Message>>() {
-             @Override
-             public void onSuccess(SendResult<String, Message> result) {
-                 logger.info("成功发送消息：{}，offset=[{}]", message, result.getRecordMetadata().offset());
-             }
+    @GetMapping("/send1/{message}")
+    public void send(@PathVariable String message) {
+        this.kafkaTemplate.send("test", new Message("ithawk", message));
+        ListenableFuture<SendResult<String, Message>> future = this.kafkaTemplate.send("test", new Message("ithawk", message));
+        future.addCallback(new ListenableFutureCallback<SendResult<String, Message>>() {
+            @Override
+            public void onSuccess(SendResult<String, Message> result) {
+                logger.info("成功发送消息：{}，offset=[{}]", message, result.getRecordMetadata().offset());
+            }
 
-             @Override
-             public void onFailure(Throwable ex) {
-                 logger.error("消息：{} 发送失败，原因：{}", message, ex.getMessage());
-             }
-         });
-     }
+            @Override
+            public void onFailure(Throwable ex) {
+                logger.error("消息：{} 发送失败，原因：{}", message, ex.getMessage());
+            }
+        });
+    }
 
     @GetMapping("/send/{message}")
     public void sendMessage(@PathVariable String message) {

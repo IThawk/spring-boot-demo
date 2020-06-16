@@ -24,9 +24,9 @@ public class Message implements Serializable {
     @Override
     public String toString() {
         return "Message{" +
-                "from='" + from + '\'' +
-                ", message='" + message + '\'' +
-                '}';
+            "from='" + from + '\'' +
+            ", message='" + message + '\'' +
+            '}';
     }
 
     public String getFrom() {

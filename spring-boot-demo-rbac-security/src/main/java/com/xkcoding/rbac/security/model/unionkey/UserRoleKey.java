@@ -23,7 +23,7 @@ import java.io.Serializable;
 @Data
 public class UserRoleKey implements Serializable {
     private static final long serialVersionUID = 5633412144183654743L;
-    
+
     /**
      * 用户id
      */

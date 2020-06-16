@@ -38,11 +38,11 @@ public class ServerUtil {
      */
     public static Dict wrapServerDict(ServerVO serverVO) {
         Dict dict = Dict.create()
-                .set("cpu", serverVO.getCpu().get(0).getData())
-                .set("mem", serverVO.getMem().get(0).getData())
-                .set("sys", serverVO.getSys().get(0).getData())
-                .set("jvm", serverVO.getJvm().get(0).getData())
-                .set("sysFile", serverVO.getSysFile().get(0).getData());
+            .set("cpu", serverVO.getCpu().get(0).getData())
+            .set("mem", serverVO.getMem().get(0).getData())
+            .set("sys", serverVO.getSys().get(0).getData())
+            .set("jvm", serverVO.getJvm().get(0).getData())
+            .set("sysFile", serverVO.getSysFile().get(0).getData());
         return dict;
     }
 }

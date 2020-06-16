@@ -36,30 +36,30 @@ public class KafkaConsumerConfig {
     public ConsumerFactory<String, Message> consumerFactory() {
         Map<String, Object> props = new HashMap<>();
         props.put(
-                ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,
-                bootstrapServers);
+            ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,
+            bootstrapServers);
         props.put(
-                ConsumerConfig.GROUP_ID_CONFIG,
-                consumerGroupId);
+            ConsumerConfig.GROUP_ID_CONFIG,
+            consumerGroupId);
         props.put(
-                ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,
-                autoOffsetReset);
-         props.put(
-                 ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
-                 StringDeserializer.class);
-         props.put(
-                 ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
-                 StringDeserializer.class);
+            ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,
+            autoOffsetReset);
+        props.put(
+            ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
+            StringDeserializer.class);
+        props.put(
+            ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
+            StringDeserializer.class);
         return new DefaultKafkaConsumerFactory<>(
-                props,
-                new StringDeserializer(),
-                new JsonDeserializer<>(Message.class));
+            props,
+            new StringDeserializer(),
+            new JsonDeserializer<>(Message.class));
     }
 
     @Bean
     public ConcurrentKafkaListenerContainerFactory<String, Message> kafkaListenerContainerFactory() {
         ConcurrentKafkaListenerContainerFactory<String, Message> factory
-                = new ConcurrentKafkaListenerContainerFactory<>();
+            = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
         // factory.setRecordFilterStrategy(
         //         r -> r.value().contains("fuck")

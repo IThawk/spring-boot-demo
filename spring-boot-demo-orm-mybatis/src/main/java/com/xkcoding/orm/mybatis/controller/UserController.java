@@ -13,7 +13,7 @@ public class UserController {
     private UserMapper userMapper;
 
     @PostMapping(value = "post")
-    public int addUser(@RequestBody User user){
+    public int addUser(@RequestBody User user) {
         return userMapper.saveUser(user);
     }
 }

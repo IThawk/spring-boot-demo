@@ -12,7 +12,6 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 /**
- *
  * @package: com.ithawk.learn.springboot.config
  * @description: 定时任务配置，配置线程池，使用不同线程执行任务，提升效率
  * @author: IThawk

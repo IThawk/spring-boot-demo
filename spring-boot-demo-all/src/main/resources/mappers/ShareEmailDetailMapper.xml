@@ -2,20 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ithawk.learn.springboot.mapper.ShareEmailDetailMapper">
   <resultMap id="BaseResultMap" type="com.ithawk.learn.springboot.entity.ShareEmailDetail">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="creator" jdbcType="VARCHAR" property="creator" />
-    <result column="create_time" jdbcType="DATE" property="createTime" />
-    <result column="email_data" jdbcType="VARCHAR" property="emailData" />
-    <result column="receivers" jdbcType="VARCHAR" property="receivers" />
-    <result column="content" jdbcType="VARCHAR" property="content" />
-    <result column="subject" jdbcType="VARCHAR" property="subject" />
-    <result column="status" jdbcType="SMALLINT" property="status" />
-    <result column="last_update_time" jdbcType="DATE" property="lastUpdateTime" />
-    <result column="send_type" jdbcType="VARCHAR" property="sendType" />
+    <id column="id" jdbcType="INTEGER" property="id"/>
+    <result column="name" jdbcType="VARCHAR" property="name"/>
+    <result column="creator" jdbcType="VARCHAR" property="creator"/>
+    <result column="create_time" jdbcType="DATE" property="createTime"/>
+    <result column="email_data" jdbcType="VARCHAR" property="emailData"/>
+    <result column="receivers" jdbcType="VARCHAR" property="receivers"/>
+    <result column="content" jdbcType="VARCHAR" property="content"/>
+    <result column="subject" jdbcType="VARCHAR" property="subject"/>
+    <result column="status" jdbcType="SMALLINT" property="status"/>
+    <result column="last_update_time" jdbcType="DATE" property="lastUpdateTime"/>
+    <result column="send_type" jdbcType="VARCHAR" property="sendType"/>
   </resultMap>
   <sql id="Base_Column_List">
-    id, name, creator, create_time, email_data, receivers, content, subject, status, 
+    id, name, creator, create_time, email_data, receivers, content, subject, status,
     last_update_time, send_type
   </sql>
   <insert id="insertSelective" parameterType="com.ithawk.learn.springboot.entity.ShareEmailDetail">

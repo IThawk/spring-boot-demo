@@ -38,6 +38,6 @@ public class ExcelServiceImpl implements ExcelService {
 //        HSSFWorkbook wb = FileUtil.getHSSFWorkbook(sheetName, title, content, null);
 //        return wb;
 
-        return EmailUtil.makeExcelEmail(ormUserService,new ShareEmailDetail());
+        return EmailUtil.makeExcelEmail(ormUserService, new ShareEmailDetail());
     }
 }
