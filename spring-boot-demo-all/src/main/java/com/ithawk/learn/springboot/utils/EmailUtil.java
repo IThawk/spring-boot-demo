@@ -5,6 +5,8 @@ import com.ithawk.learn.springboot.entity.OrmUser;
 import com.ithawk.learn.springboot.entity.ShareEmailDetail;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.ss.usermodel.HorizontalAlignment;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 
 import java.util.List;
 
@@ -16,6 +18,8 @@ import java.util.List;
  */
 @Slf4j
 public class EmailUtil {
+
+
 
     /*
      *
@@ -58,6 +62,7 @@ public class EmailUtil {
      */
     public static HSSFWorkbook getHSSFWorkbook(String sheetName, String[] title, String[][] values, HSSFWorkbook wb) {
 
+//        XSSFCellStyle xssfCellStyle = new XSSFCellStyle();
         // 第一步，创建一个HSSFWorkbook，对应一个Excel文件
         if (wb == null) {
             wb = new HSSFWorkbook();
@@ -70,7 +75,7 @@ public class EmailUtil {
 
         // 第四步，创建单元格，并设置值表头 设置表头居中
         HSSFCellStyle style = wb.createCellStyle();
-        style.setAlignment(HSSFCellStyle.ALIGN_CENTER); // 创建一个居中格式
+        style.setAlignment(HorizontalAlignment.CENTER); // 创建一个居中格式
 
         //声明列对象
         HSSFCell cell = null;

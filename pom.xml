@@ -71,6 +71,9 @@
     <module>spring-boot-demo-flyway</module>
     <module>spring-boot-demo-all</module>
     <module>spring-boot-demo-elastic-job</module>
+    <module>spring-analysis</module>
+    <module>spring5</module>
+    <module>javaStructures</module>
   </modules>
   <packaging>pom</packaging>
 

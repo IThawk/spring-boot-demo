@@ -68,6 +68,7 @@ public class ZooLockAspect {
         MethodSignature signature = (MethodSignature) point.getSignature();
         Method method = signature.getMethod();
         Object[] args = point.getArgs();
+        //确定方法是否被@ZooLock修饰
         ZooLock zooLock = method.getAnnotation(ZooLock.class);
         if (StrUtil.isBlank(zooLock.key())) {
             throw new RuntimeException("分布式锁键不能为空");

@@ -1,9 +1,9 @@
 server:
-  port: 8080
+  port: 8089
   servlet:
     context-path: /demo
 
 zk:
-  url: 127.0.0.1:2181
+  url: 192.168.101.33:2182
   timeout: 1000
   retry: 3

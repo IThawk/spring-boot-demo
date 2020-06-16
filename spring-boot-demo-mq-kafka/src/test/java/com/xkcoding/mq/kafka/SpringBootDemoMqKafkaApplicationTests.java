@@ -1,6 +1,6 @@
 package com.xkcoding.mq.kafka;
 
-import com.xkcoding.mq.kafka.constants.KafkaConsts;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
