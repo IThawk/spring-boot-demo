@@ -34,6 +34,7 @@ public class AddTwoNum {
         int[] test = new Solution().twoSum(src, 9);
         System.out.println("TEST RESULT IS : " + test[0] + " " + test[1]);
     }
+
     static class Solution {
 
         /**
@@ -61,13 +62,12 @@ public class AddTwoNum {
         }
 
         /**
-         *
+         * @return int[]
          * @description: 先加入一个map中，再取值
          * @author IThawk
          * @date 2020/4/18 17:21
          * @param: nums
          * @param: target
-         * @return int[]
          */
         public int[] twoSum2(int[] nums, int target) {
             int[] result = new int[2];
@@ -88,13 +88,12 @@ public class AddTwoNum {
         }
 
         /**
-         *
+         * @return int[]
          * @description: 直接放入map中，过程中查找数据
          * @author IThawk
          * @date 2020/4/18 17:22
          * @param: nums
          * @param: target
-         * @return int[]
          */
         public int[] twoSum3(int[] nums, int target) {
             int[] result = new int[2];

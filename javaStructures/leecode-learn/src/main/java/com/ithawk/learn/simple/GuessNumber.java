@@ -46,6 +46,7 @@ public class GuessNumber {
         int a = new Solution1().game(guess, answer);
         System.out.println(a);
     }
+
     static class Solution1 {
         public int game(int[] guess, int[] answer) {
 

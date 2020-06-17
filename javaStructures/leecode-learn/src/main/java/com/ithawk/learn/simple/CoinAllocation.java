@@ -42,13 +42,14 @@ public class CoinAllocation {
 
     class Solution {
 
-        private  static final int TWO_FIVE = 25;
-        private  static final int TEN = 10;
-        private  static final int FIVE = 5;
-        private  static final int ONE = 1;
+        private static final int TWO_FIVE = 25;
+        private static final int TEN = 10;
+        private static final int FIVE = 5;
+        private static final int ONE = 1;
+
         public int waysToChange(int n) {
-            int num25 = n/TWO_FIVE;
-            int left25 = n%TWO_FIVE;
+            int num25 = n / TWO_FIVE;
+            int left25 = n % TWO_FIVE;
 
 
             return 0;
