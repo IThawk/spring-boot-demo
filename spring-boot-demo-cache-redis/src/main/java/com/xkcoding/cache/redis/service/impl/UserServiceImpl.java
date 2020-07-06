@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User saveOrUpdate(User user) {
         DATABASES.put(user.getId(), user);
-        log.info("保存用户【user】= {}", user);
+//        logger.info("保存用户【user】= {}", user);
         return user;
     }
 
@@ -65,7 +65,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User get(Long id) {
         // 我们假设从数据库读取
-        log.info("查询用户【id】= {}", id);
+//        log.info("查询用户【id】= {}", id);
         return DATABASES.get(id);
     }
 
@@ -78,6 +78,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public void delete(Long id) {
         DATABASES.remove(id);
-        log.info("删除用户【id】= {}", id);
+//        log.info("删除用户【id】= {}", id);
     }
 }

@@ -19,17 +19,39 @@ import java.io.Serializable;
  * @version: V1.0
  * @modified: yangkai.shen
  */
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+//@Data
+//@AllArgsConstructor
+//@NoArgsConstructor
 public class User implements Serializable {
     private static final long serialVersionUID = 2892248514883451461L;
     /**
      * 主键id
      */
     private Long id;
+
+    public User(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     /**
      * 姓名
      */
     private String name;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

@@ -30,9 +30,9 @@ import java.io.Serializable;
  * @version: V1.0
  * @modified: yangkai.shen
  */
-@Configuration
-@AutoConfigureAfter(RedisAutoConfiguration.class)
-@EnableCaching
+//@Configuration
+//@AutoConfigureAfter(RedisAutoConfiguration.class)
+//@EnableCaching
 public class RedisConfig {
 
     /**
