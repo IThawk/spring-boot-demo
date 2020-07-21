@@ -4,7 +4,11 @@
 	<groupId>com.gupaoedu</groupId>
 	<artifactId>gupaoedu-dubbo-api</artifactId>
 	<version>1.0.0</version>
-	
+  <parent>
+    <groupId>com.gupaoedu.aop</groupId>
+    <artifactId>gupaoedu-spring-dubbo</artifactId>
+    <version>2.0.0</version>
+  </parent>
 	<build>
     <resources>
       <resource>
