@@ -21,4 +21,6 @@ public interface HelloService {
      * @return 问好
      */
     String sayHello(String name);
+
+    String sayMy(Object s);
 }
