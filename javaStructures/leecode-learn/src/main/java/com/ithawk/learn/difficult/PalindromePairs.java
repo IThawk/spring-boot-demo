@@ -85,6 +85,10 @@ public class PalindromePairs {
 
 
     class Solution1 {
+
+        /**
+         * 字典树
+         */
         public class Trie {
             Trie[] next;
             //end表示这目前这棵树是那一个索引单词的结尾
