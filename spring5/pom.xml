@@ -31,7 +31,7 @@
 <!--    <module>gupaoedu-vip-netty-rpc</module>-->
 <!--    <module>gupaoedu-vip-spring5-demo</module>-->
 <!--    <module>gupaoedu-vip-spring-2.0</module>-->
-<!--    <module>gupaoedu-vip-spring-aop</module>-->
+    <module>gupaoedu-vip-spring-aop</module>
 <!--    <module>gupaoedu-vip-spring-orm</module>-->
 <!--    <module>gupaoedu-vip-spring-transaction</module>-->
 <!--    <module>gupaoedu-vip-springaop</module>-->
