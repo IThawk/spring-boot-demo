@@ -33,7 +33,7 @@
 <!--    <module>gupaoedu-vip-spring-2.0</module>-->
     <module>gupaoedu-vip-spring-aop</module>
 <!--    <module>gupaoedu-vip-spring-orm</module>-->
-<!--    <module>gupaoedu-vip-spring-transaction</module>-->
+    <module>gupaoedu-vip-spring-transaction</module>
 <!--    <module>gupaoedu-vip-springaop</module>-->
 <!--    <module>gupaoedu-vip-springjdbc</module>-->
 <!--    <module>gupaoedu-vip-springmvc</module>-->
